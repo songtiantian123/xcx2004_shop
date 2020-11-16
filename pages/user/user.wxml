@@ -1,0 +1,8 @@
+<!--pages/user/user.wxml-->
+<text>pages/user/user.wxml</text>
+<view>
+  <view>
+    <button class="nini-btn" type="primary" size="mini">登录</button>
+  </view>
+</view>
+
