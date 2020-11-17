@@ -12,10 +12,9 @@ Page({
   },
   // 点击登录
   btnLogin:function(res){
-    console.log(this);
+    // console.log(11);
     wx.login({
       success (res) {
-        console.log(res);
         if (res.code) {
           //发起网络请求
           wx.request({
