@@ -4,11 +4,23 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    name:'张三',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    "bnrUrl":[{
+      "url":"/images/discount-banner.jpg"
+    },{
+      "url":"/images/draw-banner.jpg"
+    },{
+      "url":"/images/nursing-banner.jpg"
+    }],
+    // list:['全部','猫粮','玩具','保健','零食'],
+    // person:{
+    //   name:"小黑",
+    //   age:18,
+    // }
+    // motto: 'Hello World',
+    // name:'张三',
+    // userInfo: {},
+    // hasUserInfo: false,
+    // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   // 点击登录
   btnLogin:function(res){

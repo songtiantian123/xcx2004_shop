@@ -35,10 +35,6 @@
         "selectedIconPath": "images/order-select.png"
       },
       {
-        "pagePath": "pages/detail/detail",
-        "text": "详情"
-      },
-      {
         "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "images/my.png",
