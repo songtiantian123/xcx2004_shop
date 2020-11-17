@@ -10,6 +10,26 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  // 点击登录
+  btnLogin:function(res){
+    console.log(this);
+    wx.login({
+      success (res) {
+        console.log(res);
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: 'http://jd.2004.com/wx/xcxlogin',
+            data: {
+              code: res.code
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
