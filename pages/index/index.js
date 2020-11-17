@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    // 轮播图
     "bnrUrl":[{
       "url":"/images/discount-banner.jpg"
     },{
@@ -11,11 +12,11 @@ Page({
     },{
       "url":"/images/nursing-banner.jpg"
     }],
-    // list:['全部','猫粮','玩具','保健','零食'],
-    // person:{
-    //   name:"小黑",
-    //   age:18,
-    // }
+    list:['全部','猫粮','玩具','保健','零食'],
+    person:{
+      name:"小黑",
+      age:18,
+    }
     // motto: 'Hello World',
     // name:'张三',
     // userInfo: {},
@@ -48,24 +49,13 @@ Page({
     })
   },
   onLoad: function () {
-
-    console.log(this);
     let _this = this;
     // 发起网络请求
     wx.request({
-      url: 'http://jd.2004.com/api/test',
-      data: {
-        x: '123',
-        y: '456'
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      url: 'http://jd.2004.com/wx/details',
       success (res) {
-        console.log(this);
         _this.setData({
-          goods_name:res.data.goods_name,
-          goods_price:res.data.goods_price,
+          goods:res.data
         })
       }
     })

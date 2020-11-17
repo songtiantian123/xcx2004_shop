@@ -12,7 +12,8 @@
 </swiper>
 <!--导航栏-->
 
-<!--list列表-->
-<view wx:for="{{list}}" wx:key="{{item}}">
-      {{index}}: {{item}}
+
+<!--列表-->
+<view wx:for="{{goods}}">
+  商品名称: {{goods[index].goods_name}}
 </view>
