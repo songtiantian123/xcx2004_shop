@@ -4,6 +4,8 @@ const app = getApp()
 
 Page({
   data: {
+    imagewidth: 120, // 缩放后的宽
+    imageheight: 120, // 缩放后的高
     // 轮播图
     "bnrUrl":[{
       "url":"/images/discount-banner.jpg"
@@ -34,7 +36,13 @@ Page({
             url: 'http://jd.2004.com/wx/xcxlogin',
             data: {
               code: res.code
-            }
+            },
+            success(res){
+              wx.setStorage({
+                key:"token",
+                data:res.data.data
+              })
+            },
           })
         } else {
           console.log('登录失败！' + res.errMsg)
@@ -52,10 +60,10 @@ Page({
     let _this = this;
     // 发起网络请求
     wx.request({
-      url: 'http://jd.2004.com/wx/details',
+      url: 'http://jd.2004.com/api/details',
       success (res) {
         _this.setData({
-          goods:res.data
+          goods:res.data.data.list
         })
       }
     })

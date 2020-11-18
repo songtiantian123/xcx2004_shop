@@ -1,7 +1,4 @@
 <!--index.wxml-->
-<view>
-    <button type="primary" bindtap="btnLogin">登录</button>
-</view>
 <!--轮播图-->
    <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
   <block wx:for="{{bnrUrl}}" wx:for-index="index">
@@ -10,10 +7,28 @@
     </swiper-item>
   </block>
 </swiper>
+
 <!--导航栏-->
+<view class="nav">
+  <span>全部</span>
+  <span>猫粮</span>
+  <span>狗粮</span>
+  <span>玩具</span>
+  <span>保健</span>
+  <span>零食</span>
+</view>
 
-
-<!--列表-->
-<view wx:for="{{goods}}">
-  商品名称: {{goods[index].goods_name}}
+<!--列表 开始-->
+<view class="list">
+<view class="item" wx:for="{{goods}}" data-goodsid="{{item.goods_id}}" bindtap="goodsDetail">
+  <view class="img">
+      <image src="{{item.goods_img}}" style="width: {{imagewidth}}px; height: {{imageheight}}px;" alt=""></image>
+  </view>
+  <view class="content">
+     <view class="goods_name">{{item.goods_name}}</view>
+     <view class="goods_brand">Nokic</view>
+     <view class="shop_price">{{item.shop_price}}</view>
+  </view>
+  <!--列表 结束-->
+</view>
 </view>

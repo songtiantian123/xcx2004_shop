@@ -6,7 +6,8 @@
     "pages/user/user",
     "pages/order/order",
     "pages/cart/cart",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/indexs/indexs"
   ],
   "window": {
     "backgroundTextStyle": "light",

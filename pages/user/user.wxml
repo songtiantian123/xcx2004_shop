@@ -1,2 +1,46 @@
 <!--pages/user/user.wxml-->
+   <button open-type="getUserInfo" type="warn" bindtap="userInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取头像昵称</button>
 
+
+<view class="my">
+     <view class="my-item flex-wrp" catchtap="no_payment">
+          <view class="myitem-icon flex-item">
+            <image src="/images/order-select.png"></image>
+          </view>
+          <view class="myitem-name flex-item">
+            <text>我的订单</text>
+          </view>
+        </view>
+<view class="my-item flex-wrp" catchtap="already_shipped">
+          <view class="myitem-icon flex-item">
+            <image src="/images/timg.jpg"></image>
+          </view>
+          <view class="myitem-name flex-item">
+            <text>我的优惠券</text>
+          </view>
+          </view>
+<view class="my-item flex-wrp" catchtap="no_comment">
+          <view class="myitem-icon flex-item">
+             <image src="/images/integral.jpg"></image>
+          </view>
+          <view class="myitem-name flex-item">
+             <text>我的积分</text>
+          </view>
+          </view>
+<view class="my-item flex-wrp" catchtap="customer_service">
+          <view class="myitem-icon flex-item">
+               <image src="/images/pet.jpg"></image>
+          </view>
+          <view class="myitem-name flex-item">
+               <text>我的宠物</text>
+          </view>
+          </view>
+<view class="my-item flex-wrp" catchtap="coupon">
+          <view class="myitem-icon flex-item">
+               <image src="/images/my-select.png"></image>
+          </view>
+          <view class="myitem-name flex-item">
+               <text>个人信息</text>
+          </view>
+               </view>
+</view>
