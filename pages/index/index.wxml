@@ -27,7 +27,7 @@
 
 <!--列表 开始-->
 <view class="list">
-<view class="item" wx:for="{{goods}}" wx:key="unique" id="{{item.goods_id}}" bindtap="goodsDetail">
+<view class="item" wx:for="{{goods}}" wx:key="unique" data-id="{{item.goods_id}}" bindtap="goodsDetail">
   <view class="img">
       <image src="{{item.goods_img}}" style="width: {{imagewidth}}px; height: {{imageheight}}px;" alt=""></image>
   </view>

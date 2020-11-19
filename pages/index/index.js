@@ -14,18 +14,22 @@ Page({
     },{
       "url":"/images/nursing-banner.jpg"
     }],
-    list:['全部','猫粮','玩具','保健','零食'],
-    person:{
-      name:"小黑",
-      age:18,
-    }
-    // motto: 'Hello World',
-    // name:'张三',
-    // userInfo: {},
-    // hasUserInfo: false,
-    // canIUse: wx.canIUse('button.open-type.getUserInfo')
+    list:[],
+    page: 1, // 列表 页号
+    pagesize:10, // 列表 大小
   },
-  // 点击登录
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    console.log(111111)
+    this.data.page++;
+    this.getGoodsList();
+  },
+  /**
+   * 点击登录
+   * @param res
+   */
   btnLogin:function(res){
     // console.log(11);
     wx.login({
@@ -50,30 +54,64 @@ Page({
       }
     })
   },
+  /**
+   * 获取商品的数据
+   */
+  getGoodsList:function(){
+    let _this=this;
+    console.log(111222333444);
+    // 发起网络请求
+    wx.request({
+      url: 'http://jd.2004.com/api/details',
+      data:{
+        page:_this.data.page,
+        size:_this.data.pagesize
+      },
+      header:{'content-type': 'application/json'},
+      success (res) {
+        let new_list = _this.data.list.concat(res.data.data.list)
+        _this.setData({
+          // goods:res.data.data.list
+          goods:new_list
+        })
+      }
+    })
+  },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  // 小程序跳至详情页
+
+  /**
+   * 小程序跳至详情页
+   * @param res
+   */
   goodsDetail:function(res){
-    let goods_id = res.currentTarget.id
+    let goods_id = res.currentTarget.dataset.id
+    // 切换至详情页
     wx.navigateTo({
       url:'../detail/detail?id='+goods_id
     })
   },
+
+  /**
+   * onLoad事件
+   */
   onLoad: function () {
-    let _this = this;
+    this.getGoodsList();
     // 发起网络请求
-    wx.request({
-      url: 'http://jd.2004.com/api/details',
-      success (res) {
-        _this.setData({
-          goods:res.data.data.list
-        })
-      }
-    })
+
+    // wx.request({
+    //   url: 'http://jd.2004.com/api/details',
+    //   success (res) {
+    //     _this.setData({
+    //       goods:res.data.data.list
+    //     })
+    //   }
+    // })
 
 
     if (app.globalData.userInfo) {
@@ -103,6 +141,7 @@ Page({
       })
     }
   },
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
