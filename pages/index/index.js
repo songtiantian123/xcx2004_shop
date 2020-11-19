@@ -56,6 +56,13 @@ Page({
       url: '../logs/logs'
     })
   },
+  // 小程序跳至详情页
+  goodsDetail:function(res){
+    let goods_id = res.currentTarget.id
+    wx.navigateTo({
+      url:'../detail/detail?id='+goods_id
+    })
+  },
   onLoad: function () {
     let _this = this;
     // 发起网络请求

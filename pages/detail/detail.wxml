@@ -1,2 +1,39 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<!-- 商品详情-->
+<view class="details-box">
+   <view style="height:80px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
+      <view>商品详情</view>
+   </view>
+   <view class="details-nav">
+       <view class="wxParse">
+         <view class="shop">
+            <image src="/images/商品相册.jpg" style="width: {{imagewidth}}px; height: {{imageheight}}px;" alt=""></image>
+         </view>
+           <view>￥{{goods_info.shop_price}}</view>
+           <span>{{goods_info.goods_name}}</span>|
+       </view>
+   </view>
+</view>
+
+<!-- 详情页底部 开始-->
+ <view class="content">
+   <view class="stort">
+       <span class="item-txt1">店铺</span>
+   </view>
+   <view class="consult">
+       <span class="item-txt2">咨询</span>
+   </view>
+   <view class="cart">
+       <span class="item-txt3">购物车</span>
+   </view>
+   <view class="add-cart">
+       <span class="item-txt4">加入购物车</span>
+   </view>
+   <view class="hand-buy">
+      <button class='btn5'>
+         <span class="item-txt5">立即购买</span>
+      </button>
+       
+   </view>
+ </view>
+<!-- 详情页底部 结束-->

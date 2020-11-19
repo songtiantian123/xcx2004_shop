@@ -22,12 +22,28 @@ button{
     margin-top: 20px;
     /* border: 1px solid gray; */
  }
- .nav span{
-    padding: 3px 3px 3px 3px;
-    margin-left: 15px;
-    font-size: 15px;
-    border: 1px solid #f0f0f0;
+
+ .nav-box .nav{
+     overflow: hidden;
+     width: 2000rpx;
  }
+
+.nav-box .nav .item.current{
+    color: #cae696;
+}
+
+.nav-box .nav .item{
+    width: 100rpx;
+    height: 60rpx;
+    border: solid 2rpx #eee;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    border-radius: 20rpx;
+
+}
+
  /* 列表 */
  .list{
     margin-top: -16px;

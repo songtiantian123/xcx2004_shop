@@ -1,1 +1,36 @@
 /* pages/detail/detail.wxss */
+/* 商品详情页*/
+.details-box{
+      margin-top:0px;padding:0 15px;font-size: 13px;background:#fff;
+}
+.details-box .details-nav .wxParse .shop image{
+    width: 800rpx;
+    height:800rpx;
+}
+/** 商品详情页底部 **/
+.content{
+   margin-top: 100px;
+   width:318px;
+   height:10px;
+   padding:10px 10px 10px 10px;
+}
+.content .stort .item-txt1{
+   float:left;
+   margin-left:2px;
+}
+.content .consult .item-txt2{
+   float:left;
+   margin-left:10px;
+}
+.content .cart .item-txt3{
+   float:left;
+   margin-left:10px;
+}
+.content .add-cart .item-txt4{
+   float:left;
+   margin-left:10px;
+}
+.content .hand-buy .btn5 .item-txt5{
+   float:left;
+   margin-left:10px;
+}
