@@ -4,12 +4,95 @@
       margin-top:0px;padding:0 15px;font-size: 13px;background:#fff;
 }
 .details-box .details-nav .wxParse .shop image{
-    width: 800rpx;
-    height:800rpx;
+    width: 720rpx;
+    height:600rpx;
 }
+.shop{
+   position: relative;
+}
+.shop swiper{
+   height:300px;
+}
+.shop .tran{
+   position: absolute;
+   bottom: 10px;
+   right: 10px;
+   background:#333;
+   opacity:0.6;
+   border-radius:20rpx;
+   color:white;
+}
+.blank{
+    margin-top: 80px;
+    background-color: gainsboro;
+    border: 1px solid red;
+}
+
+/** 详情页底部导航 开始 **/
+.bottom-nav .iconfont
+{
+    font-size:20px;
+}
+
+.bottom-nav .nav-icon
+{
+    float:left;
+    margin-top: 80px;
+    margin-left: 10px;
+    background-color:#eeeeee;
+    flex: 0.5;
+    text-align: center;
+}
+.bottom-nav .nav-addcart {
+    float:left;
+    margin-top: 80px;
+    flex: 1;
+    line-height: 80rpx;
+    text-align: center;
+    background-color: orange;
+    color: #fff;
+}
+
+.bottom-nav .nav-buynow {
+    float:left;
+    margin-top: 80px;
+    flex: 1;
+    line-height: 80rpx;
+    text-align: center;
+    background-color: #ffcc00;
+    color: #fff;
+
+}
+
+.desc-box {
+    margin-top: 20rpx;
+    width: 100%;
+    padding:20rpx;
+    margin-bottom: 65rpx;
+}
+
+.desc-box .desc-img {
+    margin: 0;
+}
+
+.desc-box image {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /** 商品详情页底部 **/
 .content{
-   margin-top: 100px;
+   margin-top: 24px;
    width:318px;
    height:10px;
    padding:10px 10px 10px 10px;

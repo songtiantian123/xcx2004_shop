@@ -31,20 +31,29 @@ Page({
    * @param res
    */
   btnLogin:function(res){
-    // console.log(11);
     wx.login({
       success (res) {
+        console.log(res)
         if (res.code) {
+          console.log(res.code)
           //发起网络请求
           wx.request({
             url: 'http://jd.2004.com/wx/xcxlogin',
             data: {
-              code: res.code
+              code: res.code,
             },
-            success(res){
+            success:function(d){
+              // console.log(d.data);
+              // 获取登录token
               wx.setStorage({
                 key:"token",
-                data:res.data.data
+                data:d.data.data.token
+              })
+              let token = wx.getStorage({
+                key:'token',
+                success(res){
+                  console.log(res.data);
+                }
               })
             },
           })
@@ -59,7 +68,6 @@ Page({
    */
   getGoodsList:function(){
     let _this=this;
-    console.log(111222333444);
     // 发起网络请求
     wx.request({
       url: 'http://jd.2004.com/api/details',
@@ -78,6 +86,22 @@ Page({
     })
   },
 
+  /**
+   * 获取storage
+   */
+  loginInfo:function(e){
+    wx.getSettings({
+      success(res){
+        console.log(res);
+      }
+    })
+    // let s = wx.getStorage({
+    //   key:'token',
+    //   success(res){
+    //     console.log(res.data);
+    //   }
+    // })
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -102,17 +126,6 @@ Page({
    */
   onLoad: function () {
     this.getGoodsList();
-    // 发起网络请求
-
-    // wx.request({
-    //   url: 'http://jd.2004.com/api/details',
-    //   success (res) {
-    //     _this.setData({
-    //       goods:res.data.data.list
-    //     })
-    //   }
-    // })
-
 
     if (app.globalData.userInfo) {
       _this.setData({

@@ -1,22 +1,68 @@
 <!--pages/detail/detail.wxml-->
-<!-- 商品详情-->
+<!-- 商品详情页 开始-->
 <view class="details-box">
-   <view style="height:80px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
+
+    <!-- 商品详情 标题开始  -->
+   <view style="height:30px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
       <view>商品详情</view>
    </view>
+<!-- 商品详情 标题结束  -->
+
+   <!-- 图片轮播相册切换 开始 -->
+   <view class="shop">
+                  <swiper indicator-dots="{{indicatorDots}}" bindchange="swipperChange"
+                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:for="{{goods_img}}" wx:key="">
+                      <swiper-item>
+                        <image src="{{item.img}}" style="width: {{imagewidth}}px; height: {{imageheight}}px;"></image>
+                      </swiper-item>
+                    </block>
+                  </swiper>
+            <view class="tran">
+                 <text>{{current+1}}/{{goods_img.length}}</text>
+            </view>
+         </view>
+    <!-- 图片轮播相册切换 结束-->
+
+   <!-- 商品信息 开始 -->
    <view class="details-nav">
        <view class="wxParse">
-         <view class="shop">
-            <image src="/images/商品相册.jpg" style="width: {{imagewidth}}px; height: {{imageheight}}px;" alt=""></image>
-         </view>
            <view>￥{{goods_info.shop_price}}</view>
-           <span>{{goods_info.goods_name}}</span>|
+           <span>{{goods_info.goods_name}}</span>
        </view>
    </view>
+   <!-- 商品信息 结束 -->
+
 </view>
 
+<!-- 详情页导航 开始 -->
+<view class="bottom-nav">
+    <view class="nav-icon">
+        <view class="iconfont icon-home"></view>
+        <view>首页</view>
+    </view>
+    <view class="nav-icon">
+        <view class="iconfont icon-kefu"></view>
+        <view>客服</view>
+    </view>
+    <view class="nav-icon">
+        <view class="iconfont icon-gouwuche"></view>
+        <view>购物车</view>
+    </view>
+     <view class="nav-addcart">加入购物车</view>
+     <view class="nav-buynow">立即购买</view>
+</view>
+
+
+<!-- 详情页导航 结束 -->
+
+
+
+
+<!-- 商品详情页 结束 -->
+<!-- <view class="blank">地址：</view> -->
 <!-- 详情页底部 开始-->
- <view class="content">
+ <!-- <view class="content">
    <view class="stort">
        <span class="item-txt1">店铺</span>
    </view>
@@ -35,5 +81,8 @@
       </button>
        
    </view>
- </view>
+ </view> -->
 <!-- 详情页底部 结束-->
+
+
+
