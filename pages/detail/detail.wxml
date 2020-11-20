@@ -6,7 +6,7 @@
    <view style="height:30px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
       <view>商品详情</view>
    </view>
-<!-- 商品详情 标题结束  -->
+   <!-- 商品详情 标题结束  -->
 
    <!-- 图片轮播相册切换 开始 -->
    <view class="shop">
@@ -33,7 +33,6 @@
    </view>
    <!-- 商品信息 结束 -->
 
-</view>
 
 <!-- 详情页导航 开始 -->
 <view class="bottom-nav">
@@ -49,40 +48,11 @@
         <view class="iconfont icon-gouwuche"></view>
         <view>购物车</view>
     </view>
-     <view class="nav-addcart">加入购物车</view>
+     <view class="nav-addcart" >加入购物车</view>
      <view class="nav-buynow">立即购买</view>
 </view>
-
-
 <!-- 详情页导航 结束 -->
-
-
-
-
+</view>
 <!-- 商品详情页 结束 -->
-<!-- <view class="blank">地址：</view> -->
-<!-- 详情页底部 开始-->
- <!-- <view class="content">
-   <view class="stort">
-       <span class="item-txt1">店铺</span>
-   </view>
-   <view class="consult">
-       <span class="item-txt2">咨询</span>
-   </view>
-   <view class="cart">
-       <span class="item-txt3">购物车</span>
-   </view>
-   <view class="add-cart">
-       <span class="item-txt4">加入购物车</span>
-   </view>
-   <view class="hand-buy">
-      <button class='btn5'>
-         <span class="item-txt5">立即购买</span>
-      </button>
-       
-   </view>
- </view> -->
-<!-- 详情页底部 结束-->
-
 
 
