@@ -1,7 +1,7 @@
 <!--index.wxml-->
 
 <view>
-   <button type="primary" bindtap="btnLogin">登录</button>
+   <button open-type="getUserInfo" type="primary" bindgetuserinfo="btnLogin">登录</button>
 </view>
 
 <!--轮播图-->
@@ -14,7 +14,7 @@
 </swiper>
 
 <!--导航栏 开始-->
-<view class="nav-box">
+<view class="nav-box" >
 <view class="nav">
       <scroll-view scroll-x="true">
           <span class="item current">全部</span>
@@ -23,6 +23,8 @@
           <span class="item">玩具</span>
           <span class="item">保健</span>
           <span class="item">零食</span>
+          <span class="item">运动</span>
+          <span class="item">衣服</span>
       </scroll-view>
  </view>
 </view>

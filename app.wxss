@@ -25,6 +25,7 @@
   font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;
+  width: 40px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,3 +46,55 @@
   content: "\e63b";
 }
 /** iconfont 结束**/
+
+
+
+/** 购物车页面 开始 **/
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.eot?t=1605871541035'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.eot?t=1605871541035#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMoAAsAAAAABvQAAALcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBeIFtATYCJAMICwYABCAFhG0HNhsZBsgekiRaAwcUALCQgJoQD1/7/c7dt1+NpJoYumfRTvISCI0YSYGh+nTi+7Ou/i3krDS6rYBGuseZymTWn/QJ8n2PH6aY3P0WEAeMgefzXE7vGktofqDc1to0Fh0GGG/rBbqXRQEHUmABaMPYBS/wNoGmWRnsjstrW8FVZi8KxLNO5sC1EJNlVqwL1Yad2d5uOTippwX29/AafT/+7OQKkkoB9sqzLROh8OBT8fJ/OvQGBMiX84Dto8A2kImrRt8JhyS3zUFTzzlaBMeqDD6V/wOHOOqfJ6pgl7fBNJQ9k9xTPGp5AhmOXgG3k36XPPBTOAqLzhzYMn3z/tMLzx7cOmPboXNc6bSBRXs2rA9s3Xze3bvNZxFM35/kvfBg/Zrg9hft7gv3btxoN+NQoke3OyhsjXtGlMncZqrVBmSu/5L8ZYMiJXpDVLc+6qpdQN6GzxVefvJbfd4Qda0s8t+Lelbt+1fTosK9epzVaYH5x8MCT2bsVCj/+cuhU+t86q9XuAddHJSDFj9OLQyJzmtf2z3dLv58MMA+UP4sDzhMFqU/+TH/Pd0zB3xyv7p6OAK8f9w6jaTDuI4QAPVbcYRfOm4c/z+ZK+1cykBHS0iuzLowoamJElBo6MNU0+T+S6Fu8haBmpkMhbplMjO3UdGyi6q6PTRtqdjfMkI5iOwGbJoDEPqOIel6Q6HvPpmZ71ExZRJV/RzQdFPAiS2r6dxLKOYYFhE/inQCMUuuk7nHlc1Ythk5mldG/HZMrbokUitU5WIFNmO6xBrrkKxhTEISJSZUDu7DRiNBFkr0WGAKLWOWbKVSanqRQiAmcHeEwjgMJkJ4oxAdAWEmBZ0Z98rnm2EyGyMO7aDUJdthlJVuckRNQTWArNCZB1Ee5RmrITINhpEgEoowQcqBBzM6OQKxNE/TwwSMgnZCxiKbErWThuoU2xtMf7cLmmxzCmezA7TviG3YJmixgZhlAA==') format('woff2'),
+  url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.woff?t=1605871541035') format('woff'),
+  url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.ttf?t=1605871541035') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.svg?t=1605871541035#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.cart {
+height:100px;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gouwuchekong:before {
+  /**background-color:red;**/
+  content: "\e600";
+}
+
+
+/** 分享 开始**/
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_2218997_9xjxitclh3k.eot?t=1605918713782'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_2218997_9xjxitclh3k.eot?t=1605918713782#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAM0AAsAAAAABtgAAALmAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBYIFaATYCJAMICwYABCAFhG0HMhsCBhEVlDFkX2DbsAcRI9dH/qvjbkwmgKExzIHfghkoAAAAACAIaE2bhUu2lwKSbBUgC9c6kuSYhalFEI74JevXWZjTgquakBGqJMdq9UNdSAqcZuQInLlSd7e3d///7+f9kYviwo87Poxundj3BfgGmCA7o0qrAnkNEEBg1jGOV5rhukUG8fWFw2kXKJA7oNzuOXwuYGBpQOd9iq5IgYTeMHaBS9gMAdhEyyRKre4wGDRWLwGI/katACZnQ6NZ0CBw1EzUiAWwMHISn4LCfPh98Q/cDEgshZXWSJYyFP457TBiDIVeHwH0+TQAmwYKyAQaRGutr15RCIZT2D5NPPaVLOCnEyFfgdirFMH+OivRE4BISLsnusu41UQJgI5rKxXoHXUXkEkJ+qwgN4a2fGocbm1PUrymu+NrtnRqHql3F9k+x6sYNd7pDjorG6tBbT+tdsMnTp1eF6tdR2ur7JkOWg/p6X5ozviCGXBRmag/ipn0ErwnzpPoqfc8RGPhVCH4eObv0Ri/P8r18ay29/zSONK81dRqS8zucfHGnLTNB8xAdW7wu0vVbVX9P9VMGO4ynZqyXp9SqAC499WM8P3a3+A9zL5zPqb/xqUB+Pwx9tDi3tfQzwDmBvQCfiS9Z4nWmZZcapVea5BUjuopARsbcINN/n6MFQXddUhgCLp3g5OoFBSGRKTGZoKFiyxwYCgAoi2DN90lANOJeQDp7gAEX18gebsGxdc3UmN/wRLsHxx808HWXsCCLsmlRgmjLxhBcIQ0rCtylGJEyXOMt4XPWWaIXyN3qRMc0y4GPayQ5xjS7WJXhIC4LmEGtsOiqKHhOsNQzESk6VsW1d3IDOtSMZRgyCdQBASOQCpUq5BfXRilz8+h2FbBxy0ZNco1xDpp/cBhsnsgPV7VK+NerunsxFxCEEBYrQRmQIMK21cDTX27DAoJUzLC0+izUCXqyzPXF5QfkMpysMQyu7XCHKtD6lexogAAAA==') format('woff2'),
+  url('//at.alicdn.com/t/font_2218997_9xjxitclh3k.woff?t=1605918713782') format('woff'),
+  url('//at.alicdn.com/t/font_2218997_9xjxitclh3k.ttf?t=1605918713782') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_2218997_9xjxitclh3k.svg?t=1605918713782#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.share{
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fenxiang:before {
+  content: "\e607";
+}
+/** 分享 结束 **/
+
+/** 购物车页面 结束 **/

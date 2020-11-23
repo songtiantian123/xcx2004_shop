@@ -30,31 +30,37 @@ Page({
    * 点击登录
    * @param res
    */
-  btnLogin:function(res){
+  btnLogin:function(e){
+    console.log(e);
+    // 获取用户信息
+    let userinfo = e.detail.userInfo;
+    // console.log(userinfo);
     wx.login({
       success (res) {
-        console.log(res)
         if (res.code) {
-          console.log(res.code)
+          // 打印出code
+          // console.log(res.code);
           //发起网络请求
           wx.request({
-            url: 'http://jd.2004.com/wx/xcxlogin',
+            url: 'http://jd.2004.com/wx/xcxlogin?code='+ res.code,
+            method:'post',
+            header:{'content-type':'application/json'},
             data: {
-              code: res.code,
+              u:userinfo,
             },
             success:function(d){
-              // console.log(d.data);
+              console.log(d.data);
               // 获取登录token
               wx.setStorage({
                 key:"token",
                 data:d.data.data.token
               })
-              let token = wx.getStorage({
-                key:'token',
-                success(res){
-                  console.log(res.data);
-                }
-              })
+              // let token = wx.getStorage({
+              //   key:'token',
+              //   success(res){
+              //     console.log(res.data.token);
+              //   }
+              // })
             },
           })
         } else {
@@ -62,6 +68,12 @@ Page({
         }
       }
     })
+  },
+  /**
+   * 获取缓存的token
+   */
+  getToken:function(){
+    console.log(wx.getStorageSync('token'));
   },
   /**
    * 获取商品的数据

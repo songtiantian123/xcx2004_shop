@@ -48,11 +48,20 @@
         <view class="iconfont icon-gouwuche"></view>
         <view>购物车</view>
     </view>
-     <view class="nav-addcart" >加入购物车</view>
-     <view class="nav-buynow">立即购买</view>
-</view>
+    <view class="icon">
+        <button class="iconfont icon-fenxiang" open-type="share" id='btn-share' style="border:none;background-color:transparent;"></button>
+     </view>
+     <!-- 加入购物车跳转 开始 -->
+    <view class="nav-addcart" bindtap="addCart" data-id="{{goods_info.goods_id}}" data-name="{{goods_info.goods_name}}">加入购物车</view>
+    <!-- 加入购物车跳转 结束 -->
+    <view class="nav-buynow">立即购买</view>
+    </view>
 <!-- 详情页导航 结束 -->
 </view>
-<!-- 商品详情页 结束 -->
 
+<!-- 商品详情页 结束 -->
+<!--
+<view class="icon">
+    <button class="iconfont icon-fenxiang" open-type="share" id='btn-share' style="border:none;background-color:transparent;"></button>
+ </view>-->
 

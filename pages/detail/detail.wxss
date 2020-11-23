@@ -38,73 +38,42 @@
 {
     float:left;
     margin-top: 85px;
-    margin-left: 5px; 
-    margin-right: 10px;
     /* background-color: red; */
     /* background-color:#eeeeee; */
     flex: 0.5;
     text-align: center;
 }
+/** 加入购物车 **/
 .bottom-nav .nav-addcart {
     float:left;/** 左浮动 **/
-    margin-top: 82px;/** 与上边相距82px 的距离 **/
-    /* margin-right: 1px; */
+    margin-top: 50px;/** 与上边相距50px 的距离 **/
     flex: 2;
-    width:77.01px; /** 加入购物车的宽度 75px **/
+    width:85px; /** 加入购物车的宽度 85px **/
     line-height: 85rpx; /** 加入购物车中文 字的行高 **/
     text-align: center;/** 加入购物车中 文字居中对齐 **/
     background-color: orange;/** 加入购物车的背景颜色 **/
     color: #fff; /** 文字颜色 白色 **/
 }
-
+/** 立即购买 **/
 .bottom-nav .nav-buynow {
     float:left;
-    margin-top: 82px;
+    margin-top: 50px;
     flex: 1;
-    width: 77.01px;
+    width: 85px;
     height:36px;
-    line-height: 85rpx;
+    line-height: 80rpx;
     text-align: center;
     background-color: #ffcc00;
     color: #fff;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/* * 商品详情页底部 *
-.content{
-   margin-top: 24px;
-   width:318px;
-   height:10px;
-   padding:10px 10px 10px 10px;
+/** 分享图标移动 **/
+.bottom-nav .icon{
+    margin-left:250px;
 }
-.content .stort .item-txt1{
-   float:left;
-   margin-left:2px;
+/** 去除botton按钮默认的样式 **/
+button::after{
+    border:none;/** button 边框线消失 **/
+    border-radius:0;
+    background-color:transparent;/** button按钮自带背景色变为空白 **/
 }
-.content .consult .item-txt2{
-   float:left;
-   margin-left:10px;
-}
-.content .cart .item-txt3{
-   float:left;
-   margin-left:10px;
-}
-.content .add-cart .item-txt4{
-   float:left;
-   margin-left:10px;
-}
-.content .hand-buy .btn5 .item-txt5{
-   float:left;
-   margin-left:10px;
-} */
