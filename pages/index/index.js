@@ -30,10 +30,10 @@ Page({
    * 点击登录
    * @param res
    */
-  btnLogin:function(e){
-    console.log(e);
+  btnLogin:function(res){
+    // console.log(res);
     // 获取用户信息
-    let userinfo = e.detail.userInfo;
+    let userinfo = res.detail.userInfo;
     // console.log(userinfo);
     wx.login({
       success (res) {
@@ -49,18 +49,13 @@ Page({
               u:userinfo,
             },
             success:function(d){
-              console.log(d.data);
+              // console.log(d.data)
+              console.log(d.data.data.token);
               // 获取登录token
               wx.setStorage({
                 key:"token",
                 data:d.data.data.token
               })
-              // let token = wx.getStorage({
-              //   key:'token',
-              //   success(res){
-              //     console.log(res.data.token);
-              //   }
-              // })
             },
           })
         } else {
@@ -107,12 +102,6 @@ Page({
         console.log(res);
       }
     })
-    // let s = wx.getStorage({
-    //   key:'token',
-    //   success(res){
-    //     console.log(res.data);
-    //   }
-    // })
   },
   //事件处理函数
   bindViewTap: function() {

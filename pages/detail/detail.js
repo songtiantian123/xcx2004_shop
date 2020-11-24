@@ -13,6 +13,7 @@ Page({
       duration: 500,
       current:0,
       goods_info: {goods_id:217,goods_name:'AMD (AM3架构)938针 速龙X4 640 3.0G 2M 二包',shop_price:'4000',goods_number:1000,keywords:'详情'},
+      // 轮播图相册 切换
       goods_img:[
          {'img':'/images/rabbit.jpg'},
          {'img':'/images/timg.jpg'},
@@ -28,7 +29,7 @@ Page({
     let _this = this;
     let goods_id = options.id;// 获取商品id
     let access_token = wx.getStorageSync('token');
-    console.log(access_token);
+    // console.log(access_token);
     wx.request({
       url:'http://jd.2004.com/api/getDetails?goods_id='+goods_id,
       data:{
@@ -38,7 +39,7 @@ Page({
         success(res){
         _this.setData({
           goods_img:[res.data.data.res.goods_img],
-          goods_info:res.data.info,
+          goods_info:res.data.data.info,
           goods_id:goods_id,
         })
       }
@@ -50,41 +51,37 @@ Page({
      */
     addCart:function(res){
       let _this = this;
-      let goods_id = res.currentTarget.dataset.goods_id;
-      console.log(goods_id);
+      let goods_id = res.currentTarget.dataset.id;
       let access_token = wx.getStorageSync('token');
       wx.request({
-          url:'http://jd.2004.com/api/addCart?token='+access_token,
+          url:'http://jd.2004.com/api/addCart?access_token='+access_token,
           method:'POST',
           dataType:'json',
           data:{
-              goods_id:goods_id
+              goods_id:goods_id,
           },
           header: {'content-type':'application/x-www-form-urlencoded'},
           success:function (res) {
-              console.log(res);
-          }
-      })
-      /**goods.userSelect=false;/** 如果加入购物 没有数据 则不显示加入购物车成功 **/
-
-      wx.setStorage({
-          key:'cart',
-          url:'http://jd.2004.com/api/cart?goods_id='+goods_id,
-          success:function(res) {
-              console.log(res)
               wx.showToast({
                   title:"加入购物车成功",
                   cart:"success",
                   durantion:2000,
               })
-          }
-
+          },
       })
-     // var total=0;
-     //  cart.find(function (ele) {
-     //      total +=parseInt(ele.num);
-     //  })
-     //    _this.setData({cartNum:total});
+      /**goods.userSelect=false;/** 如果加入购物 没有数据 则不显示加入购物车成功 **/
+      // wx.setStorage({
+      //     key:'cart',
+      //     url:'http://jd.2004.com/api/cart?goods_id='+goods_id,
+      //     success:function(res) {
+      //         wx.showToast({
+      //             title:"加入购物车成功",
+      //             cart:"success",
+      //             durantion:2000,
+      //         })
+      //     }
+      //
+      // })
 },
   /**
    * 轮播图切换事件

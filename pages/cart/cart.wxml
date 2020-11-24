@@ -1,4 +1,4 @@
 <!--pages/cart/cart.wxml-->
 <!-- 购物车 开始 -->
-
+<view>购物车</view>
 <!-- 购物车 结束 -->
