@@ -1,40 +1,42 @@
 /* pages/user/user.wxss */
-.user {
-  width: 725rpx;
-  background: #ffffff;
-  padding: 0rpx 25rpx 0rpx 0;
-  margin: 15rpx 0 0 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #dcdcdc;
-  box-shadow: 0 2px 5px #eeeeee;
+/** 获取用户信息并登录 开始 **/
+page{
+  height:100%;
 }
-.user .userinfo-avatar{
-  flex: 1;
-  display: inline-block;
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 80rpx;
+.page-box{
+  background-color:#eee;
+  height:5%;
+  padding-top:10rpx;
 }
-.user .user-info{
-  flex: 5;
-  text-align: left;
+.login-info{
+  display:flex;
+  height:170rpx;
+  background-color:#fff;
+  padding:10rpx 20rpx;
 }
-.user .user-info text{
-  display: block;
+.login-info image{
+  width:160rpx;
+  height:160rpx;
 }
-.user .user-info .userinfo-nickname{
-  padding: 8rpx 0 10rpx 0;
-  font-size: 30rpx;
-  color: #818A8F;
+.login-info .login{
+  margin-left:30rpx;
 }
-.user .user-info .edit{
-  font-size: 30rpx;
-  color: #bababa;
-  line-height: 34rpx;
+.login-info .login .top{
+  font-size:36rpx;
+  margin-top:30rpx;
 }
+.login-info .login .desc{
+  font-size:25rpx;
+  color:#e00;
+}
+.btn-login{
+  width:100%!important;
+}
+/** 获取用户信息并登录 结束 **/
 
 .my{
-  margin: 0rpx 0 0 0;
+
+  margin: 30rpx 0 0 0;
   border-top: solid 1px #ebebeb;
   border-bottom: solid 2px #ebebeb;
 }
@@ -62,6 +64,7 @@
 }
 .my .my-item:last-child .myitem-name{
   border-bottom: none;
+  padding-bottom:20px;
 }
 
 .container {
@@ -70,7 +73,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /*padding: 200rpx 0;*/
   box-sizing: border-box;
   background: #f0f4f3;
 }

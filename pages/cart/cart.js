@@ -1,4 +1,6 @@
 // pages/cart/cart.js
+const app = getApp()
+const apihost = app.globalData.apiUrl;
 Page({
 
   /**

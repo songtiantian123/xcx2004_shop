@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const apihost = app.globalData.apiUrl;
 Page({
   data: {
     imagewidth: 120, // 缩放后的宽
@@ -42,14 +42,15 @@ Page({
           // console.log(res.code);
           //发起网络请求
           wx.request({
-            url: 'http://jd.2004.com/wx/xcxlogin?code='+ res.code,
+            // url: 'http://jd.2004.com/wx/xcxlogin?code='+ res.code,
+            url: apihost + '/wx/xcxlogin?code='+ res.code,
             method:'post',
             header:{'content-type':'application/json'},
             data: {
               u:userinfo,
             },
             success:function(d){
-              // console.log(d.data)
+              let user_id = res.data;
               console.log(d.data.data.token);
               // 获取登录token
               wx.setStorage({
@@ -77,7 +78,8 @@ Page({
     let _this=this;
     // 发起网络请求
     wx.request({
-      url: 'http://jd.2004.com/api/details',
+      //url: 'http://jd.2004.com/api/details',
+      url: apihost + '/api/details',
       data:{
         page:_this.data.page,
         size:_this.data.pagesize

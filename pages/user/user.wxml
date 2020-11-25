@@ -1,6 +1,27 @@
 <!--pages/user/user.wxml-->
-   <button open-type="getUserInfo" type="warn" bindtap="userInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取头像昵称</button>
+<!-- 未登录 开始 -->
+<view class="page-box">
+   <button wx:if="{{!user.nickName}}" class="btn-login" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+   <view class="login-info">
+     <image></image>
+     <view class="login">
+        <view class="top">点击登录</view>
+     </view>
+   </view>
+   </button>
+</view>
 
+<!-- 未登录 结束 -->
+
+<!-- 已登录 开始 -->
+   <view class="login-info" wx:if="{{user.nickName}}">
+     <image src="{{user.avatarUrl}}"></image>
+     <view class="login">
+        <view class="top">{{user.nickName}}</view>
+        <view class="desc">VIP</view>
+     </view>
+   </view>
+<!-- 已登录 结束 -->
 
 <view class="my">
      <view class="my-item flex-wrp" catchtap="no_payment">

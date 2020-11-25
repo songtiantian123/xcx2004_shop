@@ -34,6 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    //apiUrl:'https://2004.liliqin.xyz',
+    apiUrl:'http://jd.2004.com',
   }
 })

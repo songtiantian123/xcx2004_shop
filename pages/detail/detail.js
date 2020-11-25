@@ -1,4 +1,5 @@
 // pages/detail/detail.js
+const app = getApp();
 Page({
 
   /**
@@ -28,10 +29,11 @@ Page({
   onLoad: function (options) {
     let _this = this;
     let goods_id = options.id;// 获取商品id
-    let access_token = wx.getStorageSync('token');
+    let access_token = wx.getStorageSync('token');// 获取access_token
     // console.log(access_token);
     wx.request({
-      url:'http://jd.2004.com/api/getDetails?goods_id='+goods_id,
+      // url:'http://jd.2004.com/api/getDetails?goods_id='+goods_id,
+        url: app.globalData.apiUrl + "/api/getDetails?goods_id="+goods_id,
       data:{
           access_token:access_token
       },
@@ -52,21 +54,31 @@ Page({
     addCart:function(res){
       let _this = this;
       let goods_id = res.currentTarget.dataset.id;
-      let access_token = wx.getStorageSync('token');
+      let access_token = wx.getStorageSync('token');// 获取access_token
       wx.request({
-          url:'http://jd.2004.com/api/addCart?access_token='+access_token,
+          // url:'http://jd.2004.com/api/addCart?access_token='+access_token,
+          url: app.globalData.apiUrl + "/api/addCart?access_token="+access_token,
           method:'POST',
           dataType:'json',
           data:{
               goods_id:goods_id,
+              access_token:access_token,
           },
           header: {'content-type':'application/x-www-form-urlencoded'},
           success:function (res) {
-              wx.showToast({
-                  title:"加入购物车成功",
-                  cart:"success",
-                  durantion:2000,
-              })
+              if(res.data.error==0){
+                  wx.showToast({
+                      title:"加入购物车成功",
+                      cart:"success",
+                      durantion:2000,
+                  })
+              }else{
+                  wx.showToast({
+                      title:"加入购物车失败",
+                      cart:"success",
+                      durantion:2000,
+                  })
+              }
           },
       })
       /**goods.userSelect=false;/** 如果加入购物 没有数据 则不显示加入购物车成功 **/

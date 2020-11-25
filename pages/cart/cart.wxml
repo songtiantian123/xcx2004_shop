@@ -1,4 +1,53 @@
-<!--pages/cart/cart.wxml-->
-<!-- 购物车 开始 -->
-<view>购物车</view>
-<!-- 购物车 结束 -->
+<!-- 购物车头部 开始 -->
+<view class="page-box">
+   <view class="cart-top">
+        <view class="top-left">共一件商品</view>
+        <view class="top-right">删除</view>
+   </view>
+</view>
+<!-- 购物车头部 结束 -->
+
+
+<!-- 购物车列表 开始 -->
+<view class="item-list">
+    <view class="item">
+      <!-- 复选框 -->
+      <checkbox-group>
+         <checkbox value="1" checked="false"></checkbox>
+      </checkbox-group>
+      <!-- 图片 -->
+      <view class="pic">
+         <image src="/images/timg.jpg"></image>
+      </view>
+      <!-- 购物车信息 -->
+      <view class="content">
+        <view class="goods_name">商品名称</view>
+        <view class="goods_desc">商品品牌</view>
+        <view class="price-info">
+           <view class="goods_price">￥120.00</view>
+           <view class="number">
+             <view class="decr">-</view>
+             <input value="12"></input>
+             <view class="incr">+</view>
+           </view>
+        </view>
+      </view>
+    </view>
+</view>
+<!-- 购物车列表 结束 -->
+
+<!-- 购物车底部结算 开始 -->
+  <view class="bottom-box">
+    <view class="all">
+      <checkbox-group>
+        <checkbox checked="{{true}}" />
+          <text>全选</text>
+      </checkbox-group>
+    </view>
+    <view class="bottom-price">
+      总价：
+        <text class="price">￥44.00</text>
+    </view>
+    <view class="btn btn-default">去结算</view>
+  </view>
+<!-- 购物车底部结算 开始 -->
