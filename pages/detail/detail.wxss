@@ -29,13 +29,10 @@
 }
 
 /** 详情页底部导航 开始 **/
-.bottom-nav .iconfont
-{
+.bottom-nav .iconfont{
     font-size:15px;
 }
-
-.bottom-nav .nav-icon
-{
+.bottom-nav .nav-icon{
     float:left;
     margin-top: 85px;
     /* background-color: red; */
@@ -43,10 +40,10 @@
     flex: 0.5;
     text-align: center;
 }
-/** 加入购物车 **/
+/** 加入购物车 开始 **/
 .bottom-nav .nav-addcart {
     float:left;/** 左浮动 **/
-    margin-top: 50px;/** 与上边相距50px 的距离 **/
+    margin-top: 80px;/** 与上边相距50px 的距离 **/
     flex: 2;
     width:85px; /** 加入购物车的宽度 85px **/
     line-height: 85rpx; /** 加入购物车中文 字的行高 **/
@@ -54,10 +51,12 @@
     background-color: orange;/** 加入购物车的背景颜色 **/
     color: #fff; /** 文字颜色 白色 **/
 }
-/** 立即购买 **/
+/** 加入购物车 结束 **/
+
+/** 立即购买 开始 **/
 .bottom-nav .nav-buynow {
     float:left;
-    margin-top: 50px;
+    margin-top: 80px;
     flex: 1;
     width: 85px;
     height:36px;
@@ -65,12 +64,21 @@
     text-align: center;
     background-color: #ffcc00;
     color: #fff;
+}
+/** 立即购买 结束 **/
 
+/** 商品分享 开始 **/
+.details-nav .icon-share{
+    display: inline-block;/** button按钮在同一水平线 **/
+    margin-left:465rpx;/** 距离左边的边距 **/
 }
-/** 分享图标移动 **/
-.bottom-nav .icon{
-    margin-left:250px;
+/** 商品分享 结束 **/
+
+/** 商品收藏 开始 **/
+.details-nav .icon-collect{
+    display: inline-block;/** button按钮在同一水平线 **/
 }
+/** 商品收藏 结束 **/
 /** 去除botton按钮默认的样式 **/
 button::after{
     border:none;/** button 边框线消失 **/

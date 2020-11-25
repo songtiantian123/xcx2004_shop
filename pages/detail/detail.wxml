@@ -30,27 +30,35 @@
            <view>￥{{goods_info.shop_price}}</view>
            <span>{{goods_info.goods_name}}</span>
        </view>
+       <!-- 商品分享 -->
+       <view class="icon-share">
+        <button class="iconfont icon-fenxiang" open-type="share" id='btn-share' style="border:none;background-color:transparent;"></button>
+     </view>
+       <!-- 商品收藏 -->
+       <view class="icon-collect">
+        <button class="iconfont icon-shoucang" bindtap="addFav" data-goodsid="{{goods_info.goods_id}}" style="border:none;background-color:transparent;"></button>
+     </view>
    </view>
    <!-- 商品信息 结束 -->
 
 
 <!-- 详情页导航 开始 -->
 <view class="bottom-nav">
-    <view class="nav-icon">
+    <view class="nav-icon" bindtap="switchTabHome">
         <view class="iconfont icon-home"></view>
         <view>首页</view>
     </view>
-    <view class="nav-icon">
+    <view class="nav-icon" bindtap="makeCall">
         <view class="iconfont icon-kefu"></view>
-        <view>客服</view>
+        <view >客服</view>
     </view>
-    <view class="nav-icon">
+    <view class="nav-icon" bindtap="switchTabCart">
         <view class="iconfont icon-gouwuche"></view>
         <view>购物车</view>
     </view>
-    <view class="icon">
+    <!-- <view class="icon">
         <button class="iconfont icon-fenxiang" open-type="share" id='btn-share' style="border:none;background-color:transparent;"></button>
-     </view>
+     </view> -->
      <!-- 加入购物车跳转 开始 -->
     <view class="nav-addcart" bindtap="addCart" data-id="{{goods_info.goods_id}}" data-name="{{goods_info.goods_name}}">加入购物车</view>
     <!-- 加入购物车跳转 结束 -->

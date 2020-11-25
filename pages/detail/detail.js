@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 const app = getApp();
+const apihost = app.globalData.apiUrl;
 Page({
 
   /**
@@ -81,19 +82,6 @@ Page({
               }
           },
       })
-      /**goods.userSelect=false;/** 如果加入购物 没有数据 则不显示加入购物车成功 **/
-      // wx.setStorage({
-      //     key:'cart',
-      //     url:'http://jd.2004.com/api/cart?goods_id='+goods_id,
-      //     success:function(res) {
-      //         wx.showToast({
-      //             title:"加入购物车成功",
-      //             cart:"success",
-      //             durantion:2000,
-      //         })
-      //     }
-      //
-      // })
 },
   /**
    * 轮播图切换事件
@@ -105,7 +93,7 @@ Page({
     })
   },
 
-  /**
+    /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
@@ -152,5 +140,54 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+    /**
+     * 拨打客服电话
+     */
+  makeCall:function () {
+     wx.makePhoneCall({
+         phoneNumber: '15075081677'
+     })
+  },
+  /**
+   * 详情页跳转首页
+   */
+  switchTabHome:function(){
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
+  /** 详情页跳转购物车 */
+  switchTabCart:function(){
+    wx.switchTab({
+      url: '/pages/cart/cart'
+    })
+  },
+    /**
+     * 加入收藏
+     */
+    addFav:function (res) {
+        let goods_id = res.currentTarget.dataset.goodsid;
+        // let access_token = wx.getStorageSync('token');//+ '&access_token=' +access_token
+        wx.request({
+            url:apihost + '/api/addFav?goods_id='+goods_id,
+            success:function (res) {
+                if(res.data.error==0){
+                    wx.showToast({
+                        title:"收藏成功",
+                        cart:"success",
+                        durantion:2000,
+                    })
+                }else{
+                    wx.showToast({
+                        title:"收藏失败",
+                        cart:"success",
+                        durantion:2000,
+                    })
+                }
+
+            }
+        })
+    }
+
 })

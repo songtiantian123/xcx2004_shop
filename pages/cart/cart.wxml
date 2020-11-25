@@ -9,7 +9,7 @@
 
 
 <!-- 购物车列表 开始 -->
-<view class="item-list">
+<view class="item-list" bindtap="Cartlist">
     <view class="item">
       <!-- 复选框 -->
       <checkbox-group>

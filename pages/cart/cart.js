@@ -14,7 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     this.Cartlist();
   },
 
   /**
@@ -63,6 +63,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+  /**
+   * 获取购物车列表数据
+   */
+  Cartlist:function () {
+      console.log(1111);
 
   }
 })

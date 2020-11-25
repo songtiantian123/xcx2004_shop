@@ -8,9 +8,6 @@
   padding: 20rpx 0;
   box-sizing: border-box;
 } 
-
-
-
 /** iconfont 开始 **/
 @font-face {font-family: "iconfont";
   src: url('//at.alicdn.com/t/font_2216519_a265u03r8f.eot?t=1605838138714'); /* IE9 */
@@ -20,7 +17,6 @@
   url('//at.alicdn.com/t/font_2216519_a265u03r8f.ttf?t=1605838138714') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
   url('//at.alicdn.com/t/font_2216519_a265u03r8f.svg?t=1605838138714#iconfont') format('svg'); /* iOS 4.1- */
 }
-
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -29,51 +25,30 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.icon-gouwuche:before {
-  content: "\e63b";
+.icon-shoucang:before {/** 收藏 **/
+  content: "\e612";
 }
 
-.icon-home:before {
-  content: "\e602";
+.icon-ziyuan:before { /** 收藏 **/
+  content: "\e621";
 }
 
-.icon-kefu:before {
-  content: "\e677";
-}
-
-.icon-gouwuche:before {
-  content: "\e63b";
-}
-/** iconfont 结束**/
-
-
-
-/** 购物车页面 开始 **/
-@font-face {font-family: "iconfont";
-  src: url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.eot?t=1605871541035'); /* IE9 */
-  src: url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.eot?t=1605871541035#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMoAAsAAAAABvQAAALcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBeIFtATYCJAMICwYABCAFhG0HNhsZBsgekiRaAwcUALCQgJoQD1/7/c7dt1+NpJoYumfRTvISCI0YSYGh+nTi+7Ou/i3krDS6rYBGuseZymTWn/QJ8n2PH6aY3P0WEAeMgefzXE7vGktofqDc1to0Fh0GGG/rBbqXRQEHUmABaMPYBS/wNoGmWRnsjstrW8FVZi8KxLNO5sC1EJNlVqwL1Yad2d5uOTippwX29/AafT/+7OQKkkoB9sqzLROh8OBT8fJ/OvQGBMiX84Dto8A2kImrRt8JhyS3zUFTzzlaBMeqDD6V/wOHOOqfJ6pgl7fBNJQ9k9xTPGp5AhmOXgG3k36XPPBTOAqLzhzYMn3z/tMLzx7cOmPboXNc6bSBRXs2rA9s3Xze3bvNZxFM35/kvfBg/Zrg9hft7gv3btxoN+NQoke3OyhsjXtGlMncZqrVBmSu/5L8ZYMiJXpDVLc+6qpdQN6GzxVefvJbfd4Qda0s8t+Lelbt+1fTosK9epzVaYH5x8MCT2bsVCj/+cuhU+t86q9XuAddHJSDFj9OLQyJzmtf2z3dLv58MMA+UP4sDzhMFqU/+TH/Pd0zB3xyv7p6OAK8f9w6jaTDuI4QAPVbcYRfOm4c/z+ZK+1cykBHS0iuzLowoamJElBo6MNU0+T+S6Fu8haBmpkMhbplMjO3UdGyi6q6PTRtqdjfMkI5iOwGbJoDEPqOIel6Q6HvPpmZ71ExZRJV/RzQdFPAiS2r6dxLKOYYFhE/inQCMUuuk7nHlc1Ythk5mldG/HZMrbokUitU5WIFNmO6xBrrkKxhTEISJSZUDu7DRiNBFkr0WGAKLWOWbKVSanqRQiAmcHeEwjgMJkJ4oxAdAWEmBZ0Z98rnm2EyGyMO7aDUJdthlJVuckRNQTWArNCZB1Ee5RmrITINhpEgEoowQcqBBzM6OQKxNE/TwwSMgnZCxiKbErWThuoU2xtMf7cLmmxzCmezA7TviG3YJmixgZhlAA==') format('woff2'),
-  url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.woff?t=1605871541035') format('woff'),
-  url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.ttf?t=1605871541035') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('//at.alicdn.com/t/font_2218688_l5yindcr2uq.svg?t=1605871541035#iconfont') format('svg'); /* iOS 4.1- */
-}
-
-.cart {
-height:100px;
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-gouwuchekong:before {
-  /**background-color:red;**/
+.icon-gouwuchekong:before { /** 购物车 **/
   content: "\e600";
 }
-
-
+.icon-kefu:before {/** 客服 **/
+  content: "\e677";
+}
+.icon-home:before { /** 首页 **/
+  content: "\e602";
+}
+.icon-gouwuche:before {
+  content: "\e63b";
+}
+.icon-fenxiang:before { /** 分享 **/
+  content: "\e607";
+}
+/** iconfont 结束**/
 /** 分享 开始**/
 @font-face {font-family: "iconfont";
   src: url('//at.alicdn.com/t/font_2218997_9xjxitclh3k.eot?t=1605918713782'); /* IE9 */
@@ -91,10 +66,14 @@ height:100px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.icon-fenxiang:before {
-  content: "\e607";
-}
 /** 分享 结束 **/
 
-/** 购物车页面 结束 **/
+/** 收藏 **/
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_2218688_d4ecneu5og.eot?t=1606275919019'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_2218688_d4ecneu5og.eot?t=1606275919019#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAU4AAsAAAAACdQAAATsAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqHDIV4ATYCJAMQCwoABCAFhG0HShtsCFGUTk6D7IckaY1UZPEEhqslkFKgAEABBwAAgACIh//ufX+fuXNfJq1SoVKpal8eCvaOAQolpAH6IB/sYyvAd/rvtLcTFOA2FZHsVs71zKTnpAD8dcbiXOUIjIhQR3LqnkChwn6XlpcBCq/+4FjqZ4LlAf07ZCU9PuBz6wNlrL1ANhtvYAPSLeLZZPA/gc8T6DBOGbR9+/wGS5m6KxA3VgtYRixyATMUfSvjYo54N1PSa/oMwJvz+/EXNIORpK6oB3fOblI4/3AGYygNBT4tBGl3LrDXqLAAyMRFpufIxMsswOiQS6dWAUVzJbqa4T6D/zeUbCmaQmk0/cdLRIuq6QLscrbiBzAkgZYbTAK0MNRIcEEuFHQSqwDEPaiUUQuSWl7UCRmxavfv51LFnuZSiSySxkssaeuqE0HT+ZGqvPxuOfd+Amh2NwsVoncKkVL5SKWduTnyxBSyILNGugShy5BS0/EghGTlC6Dp1LQ0fqSsSxhxFjFDtBReYkaFNDEFRHWCqbmCRBTiMgG0PITWlSeCZueVE7WeYmGhV4swYt6UWRkRSaIarrKq7NaWpzEz09bEkTQaLzFnJRD16epcFW0lJYB20w36fSC/VFp2enlpKh+cmdPRJouU0aSJJeSfCwBK1TAEUVEPBf1NFogeRm+tzKXkVLTQ2qryqPnV7SGxVBC9NDNjoCMdzOwkDjqgVMiy06qqprl0DWGmlWVlQdRqGZZiJ59Qqv5dxC5dJl06UFYXag64caMpwHHpIpMePM6AJMSAmjcqN8ZFKXrerSVkQQAEz0t8WvUo46I3VN7UgIQYhAEe12MyDfxdxavQFOCZpGnHIDVOaH2bEGvNjEVCJkQ18dHerTrRGJCiddxPm/TNclw0BOFlsk6I3R3VgsfxqGZ0aFOAEGDyF3zwlmyxalX8p/aZ2s4/LzTP993LbO6Ov9bFO6ZzXt/55oUu/NtRu+zVXiRn2HnRS0oAO69ipbFlOothxJivuWmlqTKPldOseSYs4NJhvsoTLlX00BF1LHyoScQc2hPmZaznhA/Ib3M+mmY5WRVYodtM/LHkniSMhRmBxouEbQIBEI5wNjwqGUdyR5mq8uKZTkuGWB/EY5J5mCCZyn2pw0yxfhvRf2uMBs67G0/EhNn88BqKvKYNQrxNykWqav+4yYKPXThcR+2Y+bqCyXwxiwrmAuImSJovBSJ0yMMP4AGgWayGJqqwvWjydRL4/7OpnPyfWH9/m3wsJAlBvcZfS+cNiH85/uKKomrVRVPVHsBHJK0s/dqiGdv8fMf6UG053yaJIa6giZDvxewRuejQ7HxjBQbsdWEf1l0uFMMBJG3GoFJMIDN2AWqdlqGlWIMO8+yudxp03UTkdsx5TiD0qYekxyeo9JlFZuwu1Ea8hZa+wECH3eC5Z6epiFpblSRqSvFvQCs5U7q9Xrv1L6SbIMqw3GF9UFnZOB5V1eP5O8qo7OJI1epTXStUJUe8JS+jEBjzkh3JemfqOk/2apFZH7STHGFtS4kINZJCoQYoisQyyhpcWyd+/gXRGoFQFvSU+T+QUsXOjzSoUq+AvNNklXpOpfWGlnZyE1MKimRrWYRs0UWClmHoavY6h0i1nXMNUrmEGvaLrKrZDa+LZ3gIOqjvlyNFFTlq5dlwI0Wm5/ft0IhsS+ama6Qhz5kGAA==') format('woff2'),
+  url('//at.alicdn.com/t/font_2218688_d4ecneu5og.woff?t=1606275919019') format('woff'),
+  url('//at.alicdn.com/t/font_2218688_d4ecneu5og.ttf?t=1606275919019') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_2218688_d4ecneu5og.svg?t=1606275919019#iconfont') format('svg'); /* iOS 4.1- */
+}
