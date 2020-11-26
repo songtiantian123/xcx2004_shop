@@ -23,33 +23,6 @@ Page({
       user:wx.getStorageSync('user'),
     })
   },
-  userInfo:function(res){
-    wx.getUserInfo({
-      lang: lang,
-
-    })
-    wx.login({
-
-      success (res) {
-        let _this = this;
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'http://www.weixin.com/login',
-            data: {
-              code: res.code
-
-            },
-            success:function(res){
-              console.log(res)
-            }
-          })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -133,7 +106,8 @@ Page({
        if(res.code){
          // 发起网络请求//+'&token='+access_token
          wx.request({
-           url:apihost + '/wx/xcxlogin?code='+res.code,
+           // url:apihost + '/wx/xcxlogin?code='+res.code,
+           url:apihost + '/api/user-login?code='+res.code+'&token='+access_token,
            method:'post',
            header:{'content-type':'application/json'},
            data:{

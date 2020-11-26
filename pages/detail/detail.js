@@ -14,14 +14,14 @@ Page({
       interval: 2000,
       duration: 500,
       current:0,
-      goods_info: {goods_id:217,goods_name:'AMD (AM3架构)938针 速龙X4 640 3.0G 2M 二包',shop_price:'4000',goods_number:1000,keywords:'详情'},
+      iscollect: true,
+      //goods_info: {goods_id:217,goods_name:'AMD (AM3架构)938针 速龙X4 640 3.0G 2M 二包',shop_price:'4000',goods_number:1000,keywords:'详情'},
       // 轮播图相册 切换
-      goods_img:[
-         {'img':'/images/rabbit.jpg'},
-         {'img':'/images/timg.jpg'},
-         {'img':'/images/perfume.png'},
-       ],
-
+      // goods_img:[
+      //    {'img':'/images/rabbit.jpg'},
+      //    {'img':'/images/timg.jpg'},
+      //    {'img':'/images/perfume.png'},
+      //  ],
   },
 
   /**
@@ -33,17 +33,16 @@ Page({
     let access_token = wx.getStorageSync('token');// 获取access_token
     // console.log(access_token);
     wx.request({
-      // url:'http://jd.2004.com/api/getDetails?goods_id='+goods_id,
-        url: app.globalData.apiUrl + "/api/getDetails?goods_id="+goods_id,
+      url: app.globalData.apiUrl + "/api/getDetails",
       data:{
+          goods_id:goods_id,
           access_token:access_token
       },
         header: {'content-type':'application/json'},
         success(res){
         _this.setData({
-          goods_img:[res.data.data.res.goods_img],
-          goods_info:res.data.data.info,
-          goods_id:goods_id,
+          //goods_img:[res.data.data.res.goods_img],
+          goods:res.data.data.info,
         })
       }
     })
@@ -53,13 +52,14 @@ Page({
      * @param res
      */
     addCart:function(res){
+        console.log(res);
       let _this = this;
       let goods_id = res.currentTarget.dataset.id;
       let access_token = wx.getStorageSync('token');// 获取access_token
       wx.request({
           // url:'http://jd.2004.com/api/addCart?access_token='+access_token,
           url: app.globalData.apiUrl + "/api/addCart?access_token="+access_token,
-          method:'POST',
+          // method:'POST',
           dataType:'json',
           data:{
               goods_id:goods_id,
@@ -138,8 +138,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (r) {
+     console.log('分享');
   },
     /**
      * 拨打客服电话
@@ -160,7 +160,7 @@ Page({
   /** 详情页跳转购物车 */
   switchTabCart:function(){
     wx.switchTab({
-      url: '/pages/cart/cart'
+      url: '/pages/cart/cart',
     })
   },
     /**
@@ -168,15 +168,23 @@ Page({
      */
     addFav:function (res) {
         let goods_id = res.currentTarget.dataset.goodsid;
-        // let access_token = wx.getStorageSync('token');//+ '&access_token=' +access_token
+        console.log(goods_id);
+        let access_token = wx.getStorageSync('token');
         wx.request({
             url:apihost + '/api/addFav?goods_id='+goods_id,
+            dataType: 'json',
+            data:{
+                access_token:access_token
+            },
             success:function (res) {
                 if(res.data.error==0){
                     wx.showToast({
                         title:"收藏成功",
                         cart:"success",
                         durantion:2000,
+                    })
+                    this.setData({
+                        iscollect:!this.data.iscollect
                     })
                 }else{
                     wx.showToast({
@@ -186,8 +194,7 @@ Page({
                     })
                 }
 
-            }
+            },
         })
     }
-
 })

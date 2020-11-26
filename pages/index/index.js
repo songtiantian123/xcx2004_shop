@@ -31,10 +31,8 @@ Page({
    * @param res
    */
   btnLogin:function(res){
-    // console.log(res);
     // 获取用户信息
     let userinfo = res.detail.userInfo;
-    // console.log(userinfo);
     wx.login({
       success (res) {
         if (res.code) {

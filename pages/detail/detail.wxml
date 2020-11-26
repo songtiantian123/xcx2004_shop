@@ -12,14 +12,14 @@
    <view class="shop">
                   <swiper indicator-dots="{{indicatorDots}}" bindchange="swipperChange"
                     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-                    <block wx:for="{{goods_img}}" wx:key="">
+                    <block wx:for="{{goods.gallery}}" wx:key="">
                       <swiper-item>
-                        <image src="{{item.img}}" style="width: {{imagewidth}}px; height: {{imageheight}}px;"></image>
+                        <image src="{{item}}" style="width: {{imagewidth}}px; height: {{imageheight}}px;"></image>
                       </swiper-item>
                     </block>
                   </swiper>
             <view class="tran">
-                 <text>{{current+1}}/{{goods_img.length}}</text>
+                 <text>{{current+1}}/{{goods.gallery.length}}</text>
             </view>
          </view>
     <!-- 图片轮播相册切换 结束-->
@@ -27,20 +27,28 @@
    <!-- 商品信息 开始 -->
    <view class="details-nav">
        <view class="wxParse">
-           <view>￥{{goods_info.shop_price}}</view>
-           <span>{{goods_info.goods_name}}</span>
+           <view>￥{{goods.shop_price}}</view>
+           <span>{{goods.goods_name}}</span>
        </view>
-       <!-- 商品分享 -->
-       <view class="icon-share">
-        <button class="iconfont icon-fenxiang" open-type="share" id='btn-share' style="border:none;background-color:transparent;"></button>
-     </view>
+   <!-- 商品信息 结束 -->
+
+   <!-- 商品分享 -->
+   <view class="icon-share">
+            <button class="iconfont icon-fenxiang"  open-type="share" id='btn-share' style="border:none;background-color:transparent;"></button>
+   </view>
        <!-- 商品收藏 -->
        <view class="icon-collect">
-        <button class="iconfont icon-shoucang" bindtap="addFav" data-goodsid="{{goods_info.goods_id}}" style="border:none;background-color:transparent;"></button>
+           <view class="iconfont icon-shoucang" bindtap="addFav">
+                <button  data-goodsid="{{goods.goods_id}}" style="border:none;background-color:transparent;"></button>
+           </view>
      </view>
    </view>
    <!-- 商品信息 结束 -->
-
+<!-- 商品描述信息 开始 -->
+     <view class="desc-box">
+           <image mode="widthFix" src="{{item}}" wx:for="{{goods.desc_img}}" wx:key="*this"></image>
+       </view>
+   <!-- 商品描述信息 结束 -->
 
 <!-- 详情页导航 开始 -->
 <view class="bottom-nav">
@@ -60,7 +68,7 @@
         <button class="iconfont icon-fenxiang" open-type="share" id='btn-share' style="border:none;background-color:transparent;"></button>
      </view> -->
      <!-- 加入购物车跳转 开始 -->
-    <view class="nav-addcart" bindtap="addCart" data-id="{{goods_info.goods_id}}" data-name="{{goods_info.goods_name}}">加入购物车</view>
+    <view class="nav-addcart" bindtap="addCart" data-id="{{goods.goods_id}}" data-name="{{goods_info.goods_name}}">加入购物车</view>
     <!-- 加入购物车跳转 结束 -->
     <view class="nav-buynow">立即购买</view>
     </view>

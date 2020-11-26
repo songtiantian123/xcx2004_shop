@@ -2,15 +2,15 @@
 <view class="page-box">
    <view class="cart-top">
         <view class="top-left">共一件商品</view>
-        <view class="top-right">删除</view>
+        <view class="top-right" bindtap="deleteList">删除</view>
    </view>
 </view>
 <!-- 购物车头部 结束 -->
 
 
 <!-- 购物车列表 开始 -->
-<view class="item-list" bindtap="Cartlist">
-    <view class="item">
+<view class="item-list" bindtap="getCartlist">
+    <view class="item" wx:for="{{goodsList}}" wx:key="*this">
       <!-- 复选框 -->
       <checkbox-group>
          <checkbox value="1" checked="false"></checkbox>
@@ -21,14 +21,17 @@
       </view>
       <!-- 购物车信息 -->
       <view class="content">
-        <view class="goods_name">商品名称</view>
+        <view class="goods_name">{{item.goods_name}}</view>
         <view class="goods_desc">商品品牌</view>
         <view class="price-info">
-           <view class="goods_price">￥120.00</view>
+           <view class="goods_price">￥{{item.shop_price}}</view>
            <view class="number">
-             <view class="decr">-</view>
-             <input value="12"></input>
-             <view class="incr">+</view>
+           <!-- 减少数量 -->
+             <view bindtap="minusCount" data-cartid="{{item.goods_id}}" class="decr">-</view>
+           <!-- 数量 -->
+             <text>{{item.goods_num}}</text>
+           <!-- 增加数量 -->
+             <view bindtap="addCount" data-cartid="{{item.goods_id}}" class="incr">+</view>
            </view>
         </view>
       </view>
@@ -39,14 +42,14 @@
 <!-- 购物车底部结算 开始 -->
   <view class="bottom-box">
     <view class="all">
-      <checkbox-group>
-        <checkbox checked="{{true}}" />
-          <text>全选</text>
+      <checkbox-group bindtap="selectAll">
+        <checkbox checked="{{true}}" checked="{{isselectAll}}"/>
+          <text >全选</text>
       </checkbox-group>
     </view>
     <view class="bottom-price">
       总价：
-        <text class="price">￥44.00</text>
+        <text class="price">{{totalPrice}}</text>
     </view>
     <view class="btn btn-default">去结算</view>
   </view>

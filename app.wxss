@@ -25,14 +25,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-shoucang:before {/** 收藏 **/
+.icon-shoucang:before {/** 不收藏 **/
   content: "\e612";
 }
 
-.icon-ziyuan:before { /** 收藏 **/
+.icon-ziyuan:before {
   content: "\e621";
 }
-
+.icon-shoucang1:before {/** 收藏 **/
+  content: "\e600";
+}
 .icon-gouwuchekong:before { /** 购物车 **/
   content: "\e600";
 }
