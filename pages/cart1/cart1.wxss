@@ -50,3 +50,10 @@
   width: 20px;
   text-align: center;
 }
+.bottonm-box{
+  display: flex;
+}
+.bottom-price{
+  border: 1rpx solid royalblue;
+  display: flex;
+}

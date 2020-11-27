@@ -32,4 +32,17 @@
       </view>
     </view>
     <!-- 列表 结束 -->
+    <view class="bottonm-box">
+      <view class="all">
+         <checkbox-group bingdchage="selectAll">
+           <checkbox checked="isSelectedAll" />
+             <text>全选</text>
+         </checkbox-group>
+        </view>
+       <view class="bottom-price">
+         总价：
+           <input class='price' value="1"></input>
+        </view>
+        <view class="btn-default">去结算</view>
+      </view>
 </view>
