@@ -1,0 +1,52 @@
+/* pages/cart1/cart1.wxss */
+.cart-box{
+  
+}
+.cart-box .cart-top{
+  display: flex;
+  margin-left: 20px;
+  background-color: #eee;
+}
+.cart-box .cart-top .cart-left{
+  margin-right: 160px;
+}
+.cart-box .cart-list .item{
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+.cart-box .cart-list .item image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.cart-box .cart-list .item .content{
+  margin-top: 50rpx;
+  margin-left: 15rpx;
+  font-size: 30rpx;
+}
+.cart-box .cart-list .item .content .price{
+  display: flex;
+  padding: 15rpx;
+}
+.cart-box .cart-list .item .content .price .goods_price{
+  color: red;
+}
+.cart-box .cart-list .item .content .price .number{
+  display: flex;
+  border: 1rpx solid #eee;
+  margin-left: 70px;
+}
+.cart-box .cart-list .item .content .price .number .decr{
+  border: 1rpx solid #eee;
+  width: 20px;
+  text-align: center;
+}
+.cart-box .cart-list .item .content .number .i{
+  width: 20px;
+  text-align: center;
+}
+.cart-box .cart-list .item .content .price .number .incr{
+  border: 1rpx solid #eee;
+  width: 20px;
+  text-align: center;
+}

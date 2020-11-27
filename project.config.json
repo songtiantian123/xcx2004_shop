@@ -88,6 +88,12 @@
           "pathName": "pages/user/user",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "购物车练习",
+          "pathName": "pages/cart1/cart1",
+          "query": "",
+          "scene": null
         }
       ]
     }

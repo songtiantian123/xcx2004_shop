@@ -3,21 +3,24 @@ const app = getApp()
 const apihost = app.globalData.apiUrl;
 Page({
 
+  
   /**
    * 页面的初始数据
    */
   data: {
-    isSelectAll:false,
-    totalPrice:0,// 默认是0
-    goodsList:[],// 购物车列表
+    isSelectAll: false,// 是否全选 默认全不选
+    selectAll:false, // 默认全不选
+    totalPrice: 0,// 价格默认是0
+    goodsList: [],// 购物车列表
+    goodsCount: 2,// 商品总数量
+    num: 0,
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 获取购物车列表
-    this.getCartlist();
+    this.getCartlist();// 获取购物车列表
+    this.goodsCount();
   },
 
   /**
@@ -31,9 +34,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.showToast({
+      title:'加载中',
+      icon:"loading",
+      duration:1000
+    })
+    this.totalPrice();
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -94,19 +101,26 @@ Page({
   /**
    * 全选或全不选
    */
-  selectAll:function () {
-     let _this = this;
-     let isSelectAll = !_this.data.isSelectAll;
-     // 全选
-    if(isSelectAll){
-      console.log("全选");
-    }else{
-      console.log("全部不选");
-    }
-    _this.setData({
-      isSelectAll:isSelectAll,
+  selectAll:function (e) {
+    let _this = this;
+    let isSelectAll = !_this.data.isSelectAll; // 取反
+    let list = _this.data.goodsList;// 数据
+    let total = 0;// 价格默认是0
+    list.forEach((item)=>{
+      if(isSelectAll){
+        item.checked = true; // 全选
+        total += item.goods_num * item.shop_price // 计算价格
+      }else{
+        item.checked = false; // 不全选
+      }
+      this.setData({
+        goodsList:list,
+        isSelectAll:isSelectAll,
+        totalPrice:total
+      });
     })
   },
+
   /**
    * 增加库存数量
    */
@@ -140,5 +154,42 @@ Page({
         console.log("接口成功")
       }
     })
-  }
+  },
+  /**
+   * 统计商品数量
+   */
+  goodsCount:function (res) {
+    let _this = this;
+    let goods_id = res.currentTarget.dataset.cartid;
+    let access_token = wx.getStorageSync('token');// 获取access_token
+    wx.request({
+      url: apihost + '/api/goodsCount?token=' + access_token,
+      data: {
+        access_token: access_token,
+        goods_id: goods_id
+      },
+      success: function (e) {
+        console.log(e);
+        if(e.data.error==0){
+          _this.setData({
+            goodsCount:e.data.goodsCount
+          })
+        }
+      }
+    })
+  },
+  /**
+   * 删除
+   */
+  deleteList:function (res) {
+    console.log("删除");
+  },
+  /**
+   * 跳转详情页
+   */
+  CartDetail:function () {
+    wx.switchTab({
+      url: '/pages/detail/detail',
+    })
+  },
 })

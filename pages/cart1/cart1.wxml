@@ -1,0 +1,35 @@
+<!--pages/cart1/cart1.wxml-->
+<view class="cart-box">
+    <!-- 头部 开始 -->
+    <view class="cart-top">
+      <view class="cart-left">共一件商品</view>
+      <view class="cart-right">删除</view>
+    </view>
+    <!-- 头部 结束 -->
+    <!-- 列表 开始 -->
+    <view class="cart-list">
+      <view class="item">
+        <!-- 复选框 -->
+          <checkbox-group>
+            <checkbox checked="false"></checkbox>
+          </checkbox-group>
+          <!-- 图片 -->
+          <view class="images">
+            <image src="/images/home-select.png"></image>
+          </view>
+          <!-- 商品信息 -->
+          <view class="content">
+            <view class="goods_name">商品</view>
+            <view class="price">
+                <view class="goods_price">￥44.00</view>
+                <view class="number">
+                      <view class="decr">-</view>
+                      <input class="i" value="1"></input>
+                      <view class="incr">+</view>
+                </view>
+            </view>
+          </view>
+      </view>
+    </view>
+    <!-- 列表 结束 -->
+</view>

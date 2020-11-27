@@ -1,4 +1,9 @@
 /** 购物车头部 **/
+.box{
+   
+   margin-top: 500rpx;
+   margin-left: 260rpx;
+}
 .page-box{
    background-color:#eee;
 }
@@ -24,6 +29,7 @@
 }
 .item-list .item .content{
    margin-left:15px;
+   font-size:30rpx;
 }
 .item-list .item .content .price-info{
    display:flex;
@@ -49,7 +55,7 @@
    border-left:1rpx solid #eee;
 }
 .item-list .item .content .price-info .number input{
-   width:80rpx;
+   width:50rpx;
    text-align:center;
 }
 .bottom-box{
@@ -80,6 +86,7 @@
    border-radius:10rpx;
    font-size:30rpx;
    height:60rpx;
+   line-height:60rpx;
    margin-right:20rpx;
    background-color:orange;
    color:#fff;
