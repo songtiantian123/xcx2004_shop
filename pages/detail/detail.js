@@ -52,13 +52,12 @@ Page({
      * @param res
      */
     addCart:function(res){
-        console.log(res);
       let _this = this;
       let goods_id = res.currentTarget.dataset.id;
       let access_token = wx.getStorageSync('token');// 获取access_token
       wx.request({
           // url:'http://jd.2004.com/api/addCart?access_token='+access_token,
-          url: app.globalData.apiUrl + "/api/addCart?access_token="+access_token,
+          url: app.globalData.apiUrl + "/api/addCart",
           // method:'POST',
           dataType:'json',
           data:{

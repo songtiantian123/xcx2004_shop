@@ -207,7 +207,6 @@ Page({
       },
       header: {'content-type':'application/x-www-form-urlencoded'},
       success:function (e) {
-        console.log(e);
         if(e.data.error==0){
           wx.showToast({
             title:"删除成功",

@@ -25,7 +25,7 @@
       </checkbox-group>
       <!-- 图片 -->
       <view class="pic">
-         <image bindtap="CartDetail" src="/images/timg.jpg"></image>
+         <image bindtap="CartDetail" src="{{item.goods_img}}"></image>
       </view>
       <!-- 购物车信息 -->
       <view class="content">
