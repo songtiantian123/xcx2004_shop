@@ -12,7 +12,8 @@ Page({
     selectAll:false, // 默认全不选
     totalPrice: 0,// 价格默认是0
     goodsList: [],// 购物车列表
-    goodsCount: 2,// 商品总数量
+    goodsCount: [],// 商品总数量
+    delete:true,
     num: 0,
   },
   /**
@@ -39,7 +40,6 @@ Page({
       icon:"loading",
       duration:1000
     })
-    this.totalPrice();
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -122,7 +122,7 @@ Page({
   },
 
   /**
-   * 增加库存数量
+   * 接口 数据库增加库存数量
    */
   addCount:function(res){
     let goods_id = res.currentTarget.dataset.cartid;
@@ -139,7 +139,7 @@ Page({
     })
   },
   /**
-   * 减少库存数量
+   * 接口 数据库减少库存数量
    */
   minusCount:function (res) {
     let goods_id = res.currentTarget.dataset.cartid;
@@ -156,7 +156,7 @@ Page({
     })
   },
   /**
-   * 统计商品数量
+   * 接口 数据库中统计商品数量
    */
   goodsCount:function (res) {
     let _this = this;
@@ -169,27 +169,65 @@ Page({
         goods_id: goods_id
       },
       success: function (e) {
-        console.log(e);
         if(e.data.error==0){
           _this.setData({
-            goodsCount:e.data.goodsCount
+            goodsCount:e.data.data.goodsCount,
           })
         }
       }
     })
   },
   /**
-   * 删除
+   * 接口 清空购物车
    */
   deleteList:function (res) {
-    console.log("删除");
+    let access_token = wx.getStorageSync('token');// 获取access_token
+    wx.request({
+      url:apihost + '/api/deleteList',
+      data:{
+        access_token:access_token,
+      },
+      success:function (e) {
+         console.log(e)
+      }
+    })
+  },
+  /**
+   * 接口 数据库中删除
+   */
+  delete:function(res){
+    let goods_id = res.currentTarget.dataset.cartid;
+    let access_token = wx.getStorageSync('token');// 获取access_token
+    wx.request({
+      url: apihost + '/api/delete',
+      dataType:'json',
+      data:{
+        goods_id:goods_id,
+        access_token:access_token
+      },
+      header: {'content-type':'application/x-www-form-urlencoded'},
+      success:function (e) {
+        console.log(e);
+        if(e.data.error==0){
+          wx.showToast({
+            title:"删除成功",
+            cart:"success",
+            durantion:2000,
+          })
+          this.setData({
+            delete:!this.data.delete
+          })
+        }else{
+          wx.showToast({
+            title:"删除失败",
+            cart:"success",
+            durantion:2000,
+          })
+        }
+      }
+    })
   },
   /**
    * 跳转详情页
    */
-  CartDetail:function () {
-    wx.switchTab({
-      url: '/pages/detail/detail',
-    })
-  },
 })

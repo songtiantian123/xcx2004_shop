@@ -157,6 +157,7 @@ Page({
       url: '/pages/index/index'
     })
   },
+
   /** 详情页跳转购物车 */
   switchTabCart:function(){
     wx.switchTab({

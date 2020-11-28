@@ -1,18 +1,22 @@
 /** 购物车头部 **/
 .box{
-   
-   margin-top: 500rpx;
-   margin-left: 260rpx;
+   margin-top: 500rpx; /**  **/
+   margin-left: 255rpx; /**  **/
 }
+.box #c .null{ /** 购物车空的页面 **/
+   color:grey; /** 文字颜色 **/
+   font-size: 14px; /** 文字大小 **/
+   font-weight: bold; /** 文字加租 **/
+} 
 .page-box{
    background-color:#eee;
 }
-.cart-top{
-   display:flex;
-   background-color:#eee;
-   padding:10rpx;
-   height:80rpx;
-   line-height:80rpx;
+.cart-top{ /** 顶部 **/
+   display:flex;    /** 固定定位 **/
+   background-color:#eee;  /** 背景颜色 **/
+   padding:10rpx; /** 外边距 **/
+   height:80rpx; /** 高 **/
+   line-height:80rpx;  /** 行高 **/
 }
 .cart-top .top-left{
    flex:1;
@@ -46,17 +50,37 @@
    margin-left:120rpx;
 }
 .item-list .item .content .price-info .number .decr{
-   width:45rpx;
+   width:40rpx;
+   height:70rpx;
+   line-height:70rpx;
+   text-align:center;
    border-right:1rpx solid #eee;
 }
 .item-list .item .content .price-info .number .incr{
    width:40rpx;
+   height:70rpx;
+   line-height:70rpx;
+   text-align:center;
    text-align:center;
    border-left:1rpx solid #eee;
 }
-.item-list .item .content .price-info .number input{
-   width:50rpx;
+.item-list .item .content .price-info .number text{
+   width:40rpx;
+   height:70rpx;
+   line-height:70rpx;
    text-align:center;
+   text-align:center;
+}
+.item-list .item .content .price-info .delete{
+   border:1rpx solid #eee;
+   margin-left:10px;
+   font-size:24rpx;
+   align-items:center;
+   width:70rpx;
+   height:70rpx;
+   line-height:70rpx;
+   text-align:center;
+   border-radius:10rpx; /** 使正方形 四边 变为 圆角 **/
 }
 .bottom-box{
    display:flex;

@@ -1,6 +1,8 @@
 <!-- 购物车头部 开始 -->
 <view class="box" wx:if="{{goodsList==''}}">
-   <view>购物车是空的</view>
+  <view id="c" class="iconfont icon-gouwuchekong" style="width:200rpx;height:200rpx;">
+    <view class="null">购物车是空的</view>
+  </view>
 </view>
 <view wx:else>
 <view class="page-box">
@@ -8,7 +10,7 @@
         <view bindtap="goodsCount" class="top-left">共
             <text>{{goodsCount}}</text>件商品
         </view>
-        <view class="top-right" bindtap="deleteList">删除</view>
+        <view class="top-right" data-index="{{index}}" bindtap="deleteList">清空</view>
    </view>
 </view>
 <!-- 购物车头部 结束 -->
@@ -35,10 +37,11 @@
            <!-- 减少数量 -->
              <view bindtap="minusCount" data-cartid="{{item.goods_id}}" class="decr">-</view>
            <!-- 数量 -->
-             <input value="{{item.goods_num}}"></input>
+             <text value="">{{item.goods_num}}</text>
            <!-- 增加数量 -->
              <view bindtap="addCount" data-cartid="{{item.goods_id}}" class="incr">+</view>
            </view>
+           <view class="delete" data-cartid="{{item.goods_id}}" bindtap="delete">删除</view>
         </view>
       </view>
     </view>
