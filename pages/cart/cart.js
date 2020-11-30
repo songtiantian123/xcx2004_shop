@@ -161,6 +161,7 @@ Page({
    */
   minusCount:function (res) {
     let _this = this;
+    
     // let goods_id = res.currentTarget.dataset.cartid;
     let access_token = wx.getStorageSync('token');// 获取access_token
     let list = _this.data.goodsList;// 获取当前页列表数据
