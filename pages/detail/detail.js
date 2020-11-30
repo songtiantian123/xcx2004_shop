@@ -74,7 +74,7 @@ Page({
                   })
               }else{
                   wx.showToast({
-                      title:"加入购物车失败",
+                      title:"已存在，数量+1",
                       cart:"success",
                       durantion:2000,
                   })

@@ -10,41 +10,41 @@
         <view bindtap="goodsCount" class="top-left">共
             <text>{{goodsCount}}</text>件商品
         </view>
-        <view class="top-right" data-index="{{index}}" bindtap="deleteList">清空</view>
+        <view class="top-right" data-index="{{index}}" data-cartid="{{item.goods_id}}" bindtap="delete">删除</view>
    </view>
 </view>
 <!-- 购物车头部 结束 -->
 
 
 <!-- 购物车列表 开始 -->
-<view class="item-list" bindtap="getCartlist">
-    <view class="item" wx:for="{{goodsList}}" wx:key="*this">
-      <!-- 复选框 -->
-      <checkbox-group>
-         <checkbox checked="{{item.checked}}" bindtap="{{selected}}"></checkbox>
-      </checkbox-group>
-      <!-- 图片 -->
-      <view class="pic">
-         <image bindtap="CartDetail" src="{{item.goods_img}}"></image>
-      </view>
-      <!-- 购物车信息 -->
-      <view class="content">
-        <view class="goods_name">{{item.goods_name}}</view>
-        <!--<view class="goods_desc">商品描述</view>-->
-        <view class="price-info">
-           <view class="goods_price">￥{{item.shop_price}}</view>
-           <view class="number">
-           <!-- 减少数量 -->
-             <view bindtap="minusCount" data-cartid="{{item.goods_id}}" class="decr">-</view>
-           <!-- 数量 -->
-             <text value="">{{item.goods_num}}</text>
-           <!-- 增加数量 -->
-             <view bindtap="addCount" data-cartid="{{item.goods_id}}" class="incr">+</view>
-           </view>
-           <view class="delete" data-cartid="{{item.goods_id}}" bindtap="delete">删除</view>
+<view class="item-list"><!-- bindtap="getCartlist"  -->
+  <checkbox-group bindchange="checkboxChange">
+   <view class="item" wx:for="{{goodsList}}" wx:key="*this">
+        <!-- 复选框 -->
+           <checkbox value="{{item.goods_id}}" checked="{{item.checked}}"></checkbox>
+        <!-- 图片 -->
+        <view class="pic">
+           <image bindtap="CartDetail" src="{{item.goods_img}}"></image>
+        </view>
+        <!-- 购物车信息 -->
+        <view class="content">
+          <view class="goods_name">{{item.goods_name}}</view>
+          <view class="goods_desc">商品品牌</view>
+          <view class="price-info">
+             <view class="goods_price">￥{{item.shop_price}}</view>
+             <view class="number">
+             <!-- 减少数量 -->
+               <view bindtap="minusCount" data-index="{{index}}" data-cartid="{{item.goods_id}}" class="decr">-</view>
+             <!-- 数量 -->
+               <text value="">{{item.goods_num}}</text>
+             <!-- 增加数量 -->
+               <view bindtap="addCount" data-index="{{index}}" data-cartid="{{item.goods_id}}" class="incr">+</view>
+             </view>
+            <!-- <view class="delete" data-index="{{index}}" data-cartid="{{item.goods_id}}" bindtap="delete">删除</view>-->
+          </view>
         </view>
       </view>
-    </view>
+  </checkbox-group>
 </view>
 <!-- 购物车列表 结束 -->
 
@@ -62,6 +62,6 @@
     </view>
     <view class="btn btn-default">去结算</view>
   </view>
+  <!-- 购物车底部结算 结算 -->
 </view>
-
-<!-- 购物车底部结算 开始 -->
+<!-- 购物车页面 结束 -->
