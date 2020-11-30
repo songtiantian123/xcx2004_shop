@@ -163,32 +163,37 @@ Page({
     let _this = this;
     // let goods_id = res.currentTarget.dataset.cartid;
     let access_token = wx.getStorageSync('token');// 获取access_token
-    let list = this.data.goodsList;// 获取当前页列表数据
+    let list = _this.data.goodsList;// 获取当前页列表数据
     let index = res.currentTarget.dataset.index;
     let goods_id = list[index].goods_id; // 获取添加数量的商品id
-    list[index].goods_num--; // 商品数量-1
-    wx.request({
-      url: apihost + '/api/minusCount?access_token='+access_token,
-      method:'post',
-      data: {
-        access_token: access_token,
-        goods_id: goods_id
-      },
-      success: function (e) {
-        if(e.data.error==0){
-          _this.setData({
-            goodsList:list,
-          })
-          wx.showToast({
-            title:'减少成功',
-            icon:'success',
-            duration:2000,
-          })
-        }else{
-          console.log('请求接口错误');
+    if(list[index].goods_num==1){
+      list[index].goods_num=1;
+      wx.showToast({
+        title:'不能再减了',
+        icon:'none',
+        duration:2000,
+      })
+    }else{
+      list[index].goods_num--; // 商品数量-1
+      wx.request({
+        url: apihost + '/api/minusCount?access_token='+access_token,
+        method:'post',
+        data: {
+          access_token: access_token, // 获取token
+          goods_id: goods_id // 商品id
+        },
+        header: {'content-type': 'application/x-www-form-urlencoded'},
+        success: function (e) {
+          if(e.data.error==0){
+            _this.setData({
+              goodsList:list,
+            })
+          }else{
+            console.log('请求接口错误');
+          }
         }
-      }
-    })
+      })
+    }
   },
   /**
    * 接口 数据库中统计商品数量
