@@ -49,7 +49,7 @@
 <!-- 购物车列表 结束 -->
 
 <!-- 购物车底部结算 开始 -->
-  <view class="bottom-box">
+  <view class="bottom-box" wx:for="{{goodsList}}">
     <view class="all">
       <checkbox-group bindchange="selectAll">
         <checkbox checked="{{isselectAll}}"/>
@@ -60,7 +60,7 @@
       总价：
         <text class="price">{{totalPrice}}</text>
     </view>
-    <view class="btn btn-default">去结算</view>
+    <view bindchange="close" class="btn btn-default" data-index="{{index}}" data-cartid="{{item.goods_id}}" bindtap="close">去结算</view>
   </view>
   <!-- 购物车底部结算 结算 -->
 </view>

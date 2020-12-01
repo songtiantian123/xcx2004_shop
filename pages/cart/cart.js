@@ -11,6 +11,7 @@ Page({
     isSelectAll: false,// 是否全选 默认全不选
     selectAll:false, // 默认全不选
     isChooseGoods:false,// 当前项是否选中
+    close:false,
     totalPrice: 0,// 价格默认是0
     goodsList: [],// 购物车列表
     goodsCount: [],// 商品总数量
@@ -161,7 +162,6 @@ Page({
    */
   minusCount:function (res) {
     let _this = this;
-    
     // let goods_id = res.currentTarget.dataset.cartid;
     let access_token = wx.getStorageSync('token');// 获取access_token
     let list = _this.data.goodsList;// 获取当前页列表数据
@@ -242,16 +242,6 @@ Page({
         }
       })
     }
-    // let access_token = wx.getStorageSync('token');// 获取access_token
-    // wx.request({
-    //   url:apihost + '/api/deleteList',
-    //   data:{
-    //     access_token:access_token,
-    //   },
-    //   success:function (e) {
-    //      console.log(e)
-    //   }
-    // })
   },
   /**
    * 接口 数据库中删除
@@ -314,7 +304,7 @@ Page({
       goods.forEach((item2)=>{ // 循环goods 也就是循环里面的value的值
         if(item.goods_id==item2){
           item.checked = true; // 选中的状态
-          total += item.shop_price + item.goods_num; // 计算新的总价
+          total += item.shop_price * item.goods_num; // 计算新的总价
         }
       })
     })
@@ -325,5 +315,54 @@ Page({
       totalPrice:total,
       isselectAll:isSelectAll
     })
+  },
+  /**
+   * 去结算
+   */
+  close:function (res) {
+    let _this = this; // 当前对象
+    let close = [];
+    let list = _this.data.goodsList; // 当前页的列表数据
+    let access_token = wx.getStorageSync('token');// 获取access_token
+    list.forEach(item=>{
+      if(item.checked){
+        close.push(item.goods_id)
+      }
+    })
+    if(close.length>0){
+      wx.showModal({
+        title: '提示',
+        content:'是否去结算?',
+        success(res){
+          if(res.confirm){
+            wx.request({
+              url: apihost + '/api/close',
+              method:'post',
+              data:{
+                goods:close.toString(),
+                access_token:access_token
+              },
+              header: {'content-type':'application/json'},
+              success(res){
+                console.log('结算成功');
+                _this.getCartlist();
+                _this.setData({
+                  isSelectAll:false,
+                  totalPrice:0,
+                })
+              }
+            })
+          }else if(res.cancel){
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }else{
+      wx.showToast({
+        title:'请选择要结算的商品',
+        icon:'none',
+        duration:2000,
+      })
+    }
   }
 })
